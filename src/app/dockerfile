@@ -1,0 +1,14 @@
+FROM ubuntu:latest
+
+RUN apt update
+RUN apt install python3 -y
+RUN apt install python3-pip -y
+
+WORKDIR /usr/app/src
+
+COPY AtomicIQ_Stock_Insights.py ./
+
+RUN pip install streamlit
+EXPOSE 8502
+ENTRYPOINT ["streamlit","run"]
+CMD ["AtomicIQ_Stock_Insights.py"]
