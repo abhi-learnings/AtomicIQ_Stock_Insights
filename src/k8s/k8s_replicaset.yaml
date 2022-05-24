@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: stockinsights-replicaset
+ labels:
+     app: stockinsights
+     type: frontend
+spec:
+    selector:
+       matchLabels:
+         type: frontend
+    replicas: 2
+    template:
+    metadata:
+       name: stockinsights-pod
+       labels:
+           app: stockinsights
+           type: frontend
+    spec:
+          containers:
+            - name: stockinsights
+              image: nittala247/atomiciq_stock_insights

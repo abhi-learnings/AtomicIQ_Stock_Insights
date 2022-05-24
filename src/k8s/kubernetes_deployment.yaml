@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+   name: stockinsights-deployment
+   labels:
+       app: stockinsights
+       type: frontend
+spec:
+  template:
+    metadata:
+      name: stockinsights-pod
+      labels:
+           app: stockinsights
+           type: frontend
+    spec:
+      containers:
+        - name: stockinsights
+          image: nittala247/atomiciq_stock_insights
+  replicas: 2
+  selector:
+     matchLabels:
+       type: frontend

@@ -1,0 +1,13 @@
+kubectl create -f kubernetes_deployment.yaml
+
+kubectl get deployments
+
+kubectl get nodes -o wide
+
+kubectl get pods
+
+kubectl expose deployment stockinsights-deployment --name=stockinsights-service --type=NodePort --port=8502 --target-port=8501
+
+kubectl scale rs stockinsights-deployment-7ccd8cbdf6 --replicas=2
+
+kubectl get nodes -o wide

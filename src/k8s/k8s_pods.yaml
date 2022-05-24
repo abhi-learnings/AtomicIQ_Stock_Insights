@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: stockinsights-pod
+ labels:
+     app: stockinsights
+     type: frontend
+spec:
+    containers:
+      - name: stockinsights
+        image: nittala247/atomiciq_stock_insights

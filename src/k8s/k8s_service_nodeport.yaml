@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: stockinsights-service
+spec:
+    type: NodePort
+    ports:
+      - targetPort : 8501
+        port: 8501
+        nodePort: 30008
