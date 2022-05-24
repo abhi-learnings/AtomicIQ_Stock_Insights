@@ -14,7 +14,7 @@ End User should be able to :
 The application needs to be containerized using Docker and then deployed on AWS EC2. 
 Once the docker image is ready, create a pod using the same image with 2 replicas (Use Kubeadm to create a single node cluster)
 
-================================================================================================================================================
+======================================================================================
 **Approach:**
 1. Create python script file - AtomicIQ_Stock_Insights.py
 2. Create docker image using docker file
